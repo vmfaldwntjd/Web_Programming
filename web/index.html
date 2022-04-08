@@ -1,65 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<style>
-		table {
-		  font-family: arial, sans-serif;
-		  font-weight: bold;
-		  border-collapse: collapse;
-		  width: 100%;
-		}
-		
-		td, th {
-		  border: 2px solid #222121;
-		  text-align: center;
-		  padding: 12px;
-		}
-		
-		tr{
-		  background-color: #ddddddb7;
-		}
-	</style>
-	<title>웹프로그래밍 24조</title>
-</head>
-<body style="background-color:rgb(198, 233, 198)">
-	<div>
-		<h1 style="text-align:center">
-			<strong>웹프로그래밍 24조 조원 소개</strong>
-		</h1>
-	</div>
-	<div>
-		<h2 style="text-align:center">웹프로그래밍 24조 조원 소개를 위한 사이트입니다!</h2>
-	</div>
-	<div>
-		<img src="./image/24image.png" alt="24imgae" style="width:355px;height:300px">
-		<img src="./image/24image(2).png" alt="24image" style="width:355px;height:300px">
-		<img src="./image/24image(3).png" alt="24image" style="width:355px;height:300px">
-		<img src="./image/24image(4).png" alt="24image" style="width:355px;height:300px">
-	</div>
-	<div>
-		<table>
-			<tr>
-				<th>학번</th>
-				<th>이름</th>
-			</tr>
-			<tr>
-				<td>16010724</td>
-				<td>진주성</td>
-			</tr>
-			<tr>
-				<td>16011440</td>
-				<td>나준영</td>
-			</tr>
-		</table>
-	</div>
-	<br><br><br><br><br><br><br>
-	<div style="text-align:center; font-size: 100;">
-		<span style=" font: italic bold 1.5em/1em Georgia, serif ; color: rgb(113, 35, 214); border: 1px solid black">
-			<a href="introduce.html" title="조원 소개 영상 가기">조원 소개 영상 가기</a>
-		</span>
-	</div>
+    <head>
+        <title>웹프로그래밍 24조</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <style>
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                font-family: "Raleway", sans-serif
+            }
+
+            .w3-third img {
+                margin-bottom: -6px;
+                opacity: 0.8;
+            }
+
+            .w3-third img:hover {
+                opacity: 1
+            }
+        </style>
+    </head>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center"
+        style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+        <h3 class="w3-padding-64 w3-center"><b>Web<br>Programming<br>group 24</b></h3>
+        <a href="javascript:void(0)" onclick="w3_close()"
+            class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+        <a href="./introduce.html" onclick="w3_close()" class="w3-bar-item w3-button">조원소개영상 보러가기</a>
+    </nav>
+
+    <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
+        <span class="w3-left w3-padding">Web Programming group 24</span>
+        <a href="./introduce.html" class="w3-right w3-button w3-white"><small>조원소개영상 보러가기</small></a>
+    </header>
+
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay"></div>
+
+    <div class="w3-main" style="margin-left:300px">
+
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+
+        <div class="w3-row">
+            <div class="w3-third">
+                <img src="./image/24image(4).png" style="width:100%;height:500px" 
+                    alt="laptop">
+                <img src="./image/24image(3).png" style="width:100%;height:450px" 
+                    alt="laptop">
+            </div>
+            <div class="w3-third">
+                <img src="./image/24image.png" style="width:100%;height:500px" onclick="onClick(this)"
+                    alt="Quiet day at the beach. Cold, but beautiful">
+                <img src="./image/24image(2).png" style="width:100%;height:450px" onclick="onClick(this)"
+                    alt="Waiting for the bus in the desert">
+            </div>
+            <div class="w3-third">
+                <img src="./image/24image(5).png" style="width:100%;height:500px" 
+                alt="laptop">
+                <img src="./image/24image(6).jpg" style="width:100%;height:450px" 
+                alt="laptop">
+            </div>
+        </div>
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption"></p>
+            </div>
+        </div>
+        <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
+            <h4><b>조원 소개</b></h4>
+            <img src="./image/photo1.jpg" alt="Me" class="w3-image w3-padding-32" width="600" height="650">
+            <div class="w3-content w3-justify" style="max-width:600px">
+                <h4>16010724 진주성</h4>
+                <p>안녕하세요, 전자정보통신공학과 16학번 진주성입니다. 대학교 후반까지의 생활을 하면서 제 진로의 길을 정하지 못하다 최근에 
+                    프로그래밍에 관심이 생겨서 컴퓨터 프로그래밍의 기초를 한번 배워보고 싶어서 웹프로그래밍 강의를 수강하게 되었습니다. 계속 두드리면 언젠가는
+                    문이 열릴 것이라는 믿음을 가지고 있습니다. 문이 잠겨 있으면 열쇠로도 두드릴 것이고, 열쇠가 없다면 몸으로라도 문에 부딪혀 문을 열듯이, 꾸준한 열정으로
+                    웹 프로그래밍 강의 과제도 잘 끝내서 강의를 잘 마무리 하겠습니다!
+                </p>
+            </div>
+            <img src="./image/photo2.jpg" alt="Me" class="w3-image w3-padding-32" width="600" height="650">
+            <div class="w3-content w3-justify" style="max-width:600px">
+                <h4>16011440 나준영</h4>
+                <p>안녕하세요
+                    환경에너지공간융합학과 16학번 나준영입니다. 
+                    고등학교 때 남들에 하던 만큼 공부를 해서 성적에 맞춰 학과를 오게되었고, 뒤늦게 코딩에 흥미를 느껴 이렇게 복수전공을 하고 있습니다. 
+                    아직 무슨 진로를 선택할지는 모르지만, 다양한 분야를 접해 나중에 무슨 일을 계획하든 성공적으로 해내고 싶습니다! 
+                    이번 웹프로그래밍 강의도 그러한 마음가짐으로 끝까지 최선을 다 하겠습니다! 감사합니다 :)
+                </p>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
